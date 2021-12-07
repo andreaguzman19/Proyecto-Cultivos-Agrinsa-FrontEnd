@@ -6,11 +6,9 @@ import './index.css';
 import App from './App';
 import Login from './pages/login';
 import Dashboard from './pages/dashboard';
-import Parametros from './pages/parametros';
-import GestionarCultivo from './pages/gestionarCultivo';
-import GestionarPredio from './pages/gestionarPredio';
+import Configuracion from './pages/configuracion';
+import TiposCultivos from './pages/tiposDeCultivo';
 import NotFound from './pages/notFound';
-
 
 ReactDOM.render(
     <React.StrictMode>
@@ -19,13 +17,11 @@ ReactDOM.render(
                 <Route path="/" element={<App />} >
                     <Route path="login" element={<Login />} />
                     <Route path="dashboard" element={<Dashboard />} >
-                        <Route path="parametros" element={<Parametros />} />
-                        <Route path="gestionarCultivo" element={<GestionarCultivo />} />
-                        <Route path="gestionarPredio" element={<GestionarPredio />} />
+                        <Route path="configuracion" element={<Configuracion />} />
+                        <Route path="tiposDeCultivo" element={<TiposCultivos />} />
                     </Route>
                     <Route path="*" element={<NotFound />} />
-                </Route>
-                
+                </Route> 
             </Routes>
         </BrowserRouter>
   </React.StrictMode>,

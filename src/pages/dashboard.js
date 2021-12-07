@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -7,6 +7,7 @@ import Link from '@mui/material/Link';
 import { styled } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -16,6 +17,7 @@ import IconButton from '@mui/material/IconButton';
 import GrassIcon from '@mui/icons-material/Grass';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import BuildIcon from '@mui/icons-material/Build';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -75,37 +77,43 @@ function Dashboard() {
                     </IconButton>
                 </Toolbar>
                 <List>
-                    <ListItem button >
-                        <ListItemIcon>
+                    <Link href="/dashboard/configuracion" underline="none" color="inherit">
+                        <ListItem button>
+                        {!open && (
+                            <Tooltip title="Configuracion" arrow placement="right">
+                            <ListItemIcon>
+                                <ManageAccountsIcon />
+                            </ListItemIcon>
+                            </Tooltip>
+                        )}
+                        {open && (
+                            <ListItemIcon>
                             <ManageAccountsIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Configuracion" />
-                    </ListItem>
-                    <Link href="/dashboard/gestionarPredio" underline="none" color="inherit">
+                        )}
+                            <ListItemText primary="Configuracion" />
+                        </ListItem>
+                    </Link>
                     <ListItem button>
                         <ListItemIcon>
                             <ListAltIcon />
                         </ListItemIcon>
                         <ListItemText primary="Listado de predios" />
+                    </ListItem>
+                    <Link href="/dashboard/tiposDeCultivo" underline="none" color="inherit">
+                        <ListItem button>
+                            <ListItemIcon>
+                                <GrassIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Tipos de cultivo" />
                         </ListItem>
                     </Link>
-                    <Link href="/dashboard/gestionarCultivo" underline="none" color="inherit">
                     <ListItem button>
                         <ListItemIcon>
-                            <GrassIcon />
+                            <BuildIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Gestionar tipos de cultivo" />
-                        </ListItem>
-                    </Link>
-                    <Link href="/dashboard/parametros" underline="none" color="inherit">
-                    <ListItem button>
-                        <ListItemIcon>
-                            <GrassIcon />
-                        </ListItemIcon>
-                            <ListItemText primary="Gestionar parametros" />
-                        
-                        </ListItem>
-                    </Link>
+                        <ListItemText primary="Gestionar parametros" />
+                    </ListItem>
                 </List>
                 </Drawer>
                 <Box
@@ -121,9 +129,9 @@ function Dashboard() {
                     }}
                 >
                     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                        <Outlet/>
-                </Container>
-                <Copyright/>
+                        <Outlet />
+                        <Copyright sx={{ pt: 4 }} />
+                    </Container>
                 </Box>
             </Box>
     );
@@ -132,7 +140,7 @@ function Dashboard() {
 function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
+            {'Copyright ï¿½ '}
             <Link color="inherit" href="https://mui.com/">
                 Your Website
             </Link>{' '}
