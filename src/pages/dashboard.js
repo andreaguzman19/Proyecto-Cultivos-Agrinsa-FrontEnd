@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -10,16 +11,11 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 
 import GrassIcon from '@mui/icons-material/Grass';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -79,30 +75,37 @@ function Dashboard() {
                     </IconButton>
                 </Toolbar>
                 <List>
-                    <ListItem button>
+                    <ListItem button >
                         <ListItemIcon>
                             <ManageAccountsIcon />
                         </ListItemIcon>
                         <ListItemText primary="Configuracion" />
                     </ListItem>
+                    <Link href="/dashboard/gestionarPredio" underline="none" color="inherit">
                     <ListItem button>
                         <ListItemIcon>
                             <ListAltIcon />
                         </ListItemIcon>
                         <ListItemText primary="Listado de predios" />
-                    </ListItem>
+                        </ListItem>
+                    </Link>
+                    <Link href="/dashboard/gestionarCultivo" underline="none" color="inherit">
                     <ListItem button>
                         <ListItemIcon>
                             <GrassIcon />
                         </ListItemIcon>
                         <ListItemText primary="Gestionar tipos de cultivo" />
-                    </ListItem>
+                        </ListItem>
+                    </Link>
+                    <Link href="/dashboard/parametros" underline="none" color="inherit">
                     <ListItem button>
                         <ListItemIcon>
                             <GrassIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Gestionar parametros" />
-                    </ListItem>
+                            <ListItemText primary="Gestionar parametros" />
+                        
+                        </ListItem>
+                    </Link>
                 </List>
                 </Drawer>
                 <Box
@@ -118,22 +121,9 @@ function Dashboard() {
                     }}
                 >
                     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                        <Grid container spacing={3}>
-                            {/*  
-                            <Grid item xs={12} md={8} lg={9}>
-                                <Paper
-                                    sx={{
-                                        p: 2,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        height: 240,
-                                    }}
-                                >
-                                </Paper>
-                            </Grid> */}
-                        </Grid>
-                        <Copyright sx={{ pt: 4 }} />
-                    </Container>
+                        <Outlet/>
+                </Container>
+                <Copyright/>
                 </Box>
             </Box>
     );

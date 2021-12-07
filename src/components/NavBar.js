@@ -15,7 +15,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 
 export default function NavBar() {
-    const auth = React.useState(true);
+    /* const auth = React.useState(true); */
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleMenu = (event) => {

@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.paramContainer{
+    background-color:white;
+    border:1px solid gray;
+    border-radius:25px;
+    padding:15px;
+    margin-top:15px;
+    width:90%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+    .paramContainer TextField {
+        margin: 10px 0px;
+    }
