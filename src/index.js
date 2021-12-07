@@ -5,9 +5,11 @@ import './styles/index.css';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Dashboard from './pages/dashboard';
+import Dashboard from './containers/dashboard';
 import NotFound from './pages/notFound';
 import Layout from './containers/Layout'
+import ListadoPredios from './pages/ListadoPredios'
+import Predio from './pages/Predio'
 
 ReactDOM.render(
     <React.StrictMode>
@@ -16,7 +18,10 @@ ReactDOM.render(
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="login" element={<Login />} />
-                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="dashboard" element={<Dashboard />} >
+                        <Route path="predios" element={<ListadoPredios />} />
+                        <Route path="predios/:id" element={<Predio />} />
+                    </Route>
                     <Route path="*" element={<NotFound />} />                    
                 </Routes>
             </Layout>
