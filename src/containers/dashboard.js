@@ -55,7 +55,7 @@ function Dashboard() {
     const toggleDrawer = () => {
         setOpen(!open);
     };
-
+    const user = {id:1}
     return (
             <Box sx={{ display: 'flex' }}>
                 <Drawer variant="permanent" open={open}>
@@ -77,7 +77,7 @@ function Dashboard() {
                     </IconButton>
                 </Toolbar>
                 <List>
-                    <Link href="/dashboard/configuracion" underline="none" color="inherit">
+                    <Link href={`/dashboard/usuarios/${user.id}`} underline="none" color="inherit">
                         <ListItem button>
                         {!open && (
                             <Tooltip title="Configuracion" arrow placement="right">

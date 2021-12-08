@@ -10,6 +10,7 @@ import NotFound from './pages/notFound';
 import Layout from './containers/Layout'
 import ListadoPredios from './pages/ListadoPredios'
 import Predio from './pages/Predio'
+import Usuario from './pages/AdministrarUsuario'
 
 ReactDOM.render(
     <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.render(
                     <Route path="dashboard" element={<Dashboard />} >
                         <Route path="predios" element={<ListadoPredios />} />
                         <Route path="predios/:id" element={<Predio />} />
+                        <Route path="usuarios/:id" element={<Usuario />} />
                     </Route>
                     <Route path="*" element={<NotFound />} />                    
                 </Routes>
