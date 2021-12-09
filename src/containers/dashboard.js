@@ -112,12 +112,14 @@ function Dashboard() {
                             <ListItemText primary="Tipos de cultivo" />
                         </ListItem>
                     </Link>
+                    <Link href="/dashboard/parametros" underline="none" color="inherit">
                     <ListItem button>
                         <ListItemIcon>
                             <BuildIcon />
                         </ListItemIcon>
                         <ListItemText primary="Gestionar parametros" />
-                    </ListItem>
+                        </ListItem>
+                    </Link>
                 </List>
                 </Drawer>
                 <Box

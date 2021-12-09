@@ -23,8 +23,8 @@ function ListadoPredios() {
     return (
         <Box>
             <h2>Gestionar tipos de cultivo</h2>
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }}>
                 <TableHead>
                     <TableRow>
                         <TableCell align="center">Id</TableCell>
@@ -41,14 +41,12 @@ function ListadoPredios() {
                         key={row.id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                        <TableCell component="th" scope="row">
-                            {row.id}
-                        </TableCell>
+                        <TableCell component="th" scope="row">{row.id}</TableCell>
                         <TableCell align="center">{row.area}</TableCell>
                         <TableCell align="center">{row.ubicacion}</TableCell>
                         <TableCell align="center">{row.usuario}</TableCell>
                         <TableCell align="right">
-                            <Link href={`predios/${row.id}`} underline="none" color="inherit">
+                            <Link href={`gestionarPredio/${row.id}`} underline="none" color="inherit">
                                 <IconButton color="warning" component="span">
                                     <EditIcon />
                                 </IconButton>

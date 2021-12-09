@@ -1,14 +1,13 @@
 import React from 'react';
-import { Outlet } from "react-router-dom";
-import NavBar from './components/NavBar';
+import NavBar from '../components/NavBar';
 
-function App() {
+function Layout({ children }) {
     return (
-        <div className="App">
+        <div className="layout">
             <NavBar />
-            <Outlet />
+            {children}
         </div>
     )
 }
 
-export default App;
+export default Layout;

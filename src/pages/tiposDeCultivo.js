@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -47,10 +48,12 @@ function TiposCultivos() {
               </TableCell>
               <TableCell align="center">{row.nombre}</TableCell>
               <TableCell align="center">{row.descripcion}</TableCell>
-              <TableCell align="right">
-                <IconButton color="warning" component="span">
-                    <EditIcon />
-                </IconButton>
+                  <TableCell align="right">
+                      <Link href="gestionarTipoCultivo" underline="none" color="inherit">
+                        <IconButton color="warning" component="span">
+                            <EditIcon />
+                        </IconButton>
+                      </ Link>
                 <IconButton color="error" component="span">
                     <DeleteIcon />
                 </IconButton>
