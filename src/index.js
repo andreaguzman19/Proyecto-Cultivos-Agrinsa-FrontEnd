@@ -1,29 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './index.css';
+import './styles/index.css';
 
-import App from './App';
-import Login from './pages/login';
-import Dashboard from './pages/dashboard';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Dashboard from './containers/dashboard';
 import Configuracion from './pages/configuracion';
 import TiposCultivos from './pages/tiposDeCultivo';
 import NotFound from './pages/notFound';
+import Layout from './containers/Layout'
+import ListadoPredios from './pages/ListadoPredios'
+import Predio from './pages/Predio'
+import Usuario from './pages/AdministrarUsuario'
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />} >
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />} />
                     <Route path="login" element={<Login />} />
                     <Route path="dashboard" element={<Dashboard />} >
                         <Route path="configuracion" element={<Configuracion />} />
                         <Route path="tiposDeCultivo" element={<TiposCultivos />} />
+                        <Route path="predios" element={<ListadoPredios />} />
+                        <Route path="predios/:id" element={<Predio />} />
+                        <Route path="usuarios/:id" element={<Usuario />} />
                     </Route>
-                    <Route path="*" element={<NotFound />} />
-                </Route> 
-            </Routes>
+                    <Route path="*" element={<NotFound />} />                    
+                </Routes>
+            </Layout>
         </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+    </React.StrictMode>,
+    document.getElementById('root')
 );

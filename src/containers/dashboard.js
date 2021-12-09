@@ -55,7 +55,7 @@ function Dashboard() {
     const toggleDrawer = () => {
         setOpen(!open);
     };
-
+    const user = {id:1}
     return (
             <Box sx={{ display: 'flex' }}>
                 <Drawer variant="permanent" open={open}>
@@ -77,7 +77,7 @@ function Dashboard() {
                     </IconButton>
                 </Toolbar>
                 <List>
-                    <Link href="/dashboard/configuracion" underline="none" color="inherit">
+                    <Link href={`/dashboard/usuarios/${user.id}`} underline="none" color="inherit">
                         <ListItem button>
                         {!open && (
                             <Tooltip title="Configuracion" arrow placement="right">
@@ -94,12 +94,16 @@ function Dashboard() {
                             <ListItemText primary="Configuracion" />
                         </ListItem>
                     </Link>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <ListAltIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Listado de predios" />
-                    </ListItem>
+
+                    <Link href="/dashboard/predios" underline="none" color="inherit">
+                        <ListItem button>
+                            <ListItemIcon>
+                                <ListAltIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Listado de predios" />
+                        </ListItem>
+                    </Link>
+                    
                     <Link href="/dashboard/tiposDeCultivo" underline="none" color="inherit">
                         <ListItem button>
                             <ListItemIcon>
