@@ -22,7 +22,7 @@ function ListadoPredios() {
 
     return (
         <Box>
-            <h2>Gestionar tipos de cultivo</h2>
+            <h2>Listado de Predios</h2>
             <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }}>
                 <TableHead>

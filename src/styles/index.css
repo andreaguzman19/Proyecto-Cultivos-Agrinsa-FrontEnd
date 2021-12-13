@@ -12,7 +12,11 @@ code {
     monospace;
 }
 
-
+.container.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /*///////////// Materialize CSS Layout ////////////////*/
 .container {
     margin: 0 auto;
@@ -58,7 +62,7 @@ code {
     .row .col {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        padding: 0 0.75rem;
+        padding: 0 0.15rem;
         min-height: 1px;
     }
 

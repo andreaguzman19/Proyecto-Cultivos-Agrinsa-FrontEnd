@@ -8,12 +8,11 @@ import Dashboard from './containers/dashboard';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
-import TiposCultivos from './pages/tiposDeCultivo';
+import TiposCultivos from './pages/tiposDeCultivos';
 import GestionarCultivo from './pages/gestionarCultivo';
-import ListadoPredios from './pages/ListadoPredios';
+import ListadoPredios from './pages/Predios';
 import GestionarPredio from './pages/gestionarPredio';
 import Parametros from './pages/parametros';
-import Predio from './pages/Predio';
 import Usuario from './pages/AdministrarUsuario';
 import NotFound from './pages/notFound';
 
@@ -26,9 +25,9 @@ ReactDOM.render(
                     <Route path="login" element={<Login />} />
                     <Route path="dashboard" element={<Dashboard />} >
                         <Route path="tiposDeCultivo" element={<TiposCultivos />} />
-                        <Route path="gestionarTipoCultivo" element={<GestionarCultivo />} />
+                        <Route path="gestionarCultivo/:id_cultivo" element={<GestionarCultivo />} />
                         <Route path="predios" element={<ListadoPredios />} />
-                        <Route path="gestionarPredio/:id_predio" element={<Predio />} />
+                        <Route path="gestionarPredio/:id_predio" element={<GestionarPredio />} />
                         <Route path="usuarios/:id" element={<Usuario />} />
                         <Route path="parametros" element={<Parametros />} />
                     </Route>
