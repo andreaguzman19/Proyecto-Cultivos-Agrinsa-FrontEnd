@@ -23,7 +23,7 @@ ReactDOM.render(
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="login" element={<Login />} />
-                    <Route path="dashboard" element={<Dashboard />} >
+                    <Route path="dashboard/:user" element={<Dashboard />} >
                         <Route path="tiposDeCultivo" element={<TiposCultivos />} />
                         <Route path="gestionarCultivo/:id_cultivo" element={<GestionarCultivo />} />
                         <Route path="predios" element={<ListadoPredios />} />

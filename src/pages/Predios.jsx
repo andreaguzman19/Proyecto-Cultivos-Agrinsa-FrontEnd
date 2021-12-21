@@ -15,10 +15,11 @@ import Link from '@mui/material/Link';
 
 function ListadoPredios() {
 
-    const rows = [
+    const rows = 0;
+    /*[
         {id:123,area:15, ubicacion:"10° 57' 42'' de latitud norte y 74° 46' 54'' de longitud occidental",usuario:'P.Perez' },
         {id:456,area:42, ubicacion:"10° 57' 42'' de latitud norte y 74° 46' 54'' de longitud occidental",usuario:'SIN ASIGNAR' }
-    ];
+    ];*/
 
     return (
         <Box>
